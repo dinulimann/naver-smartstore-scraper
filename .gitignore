@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+*.log
+logs/
+verified_active.jsonl
+discovered_urls*.txt
+scratch/
+naver-session*.json
+*.session.json
+
+# Recordings — hosted on YouTube/Drive instead, not committed here
+*.mov
+*.mp4
+compressed/

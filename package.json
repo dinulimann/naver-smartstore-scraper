@@ -1,0 +1,38 @@
+{
+  "name": "naver-smartstore-scraper",
+  "version": "1.0.0",
+  "description": "Scalable API for scraping Naver SmartStore product detail JSON (__PRELOADED_STATE__)",
+  "main": "dist/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "dev:direct": "PROXIES= tsx watch src/server.ts",
+    "dev:decodo": "PROXIES=\"$(grep DECODO_PROXY .env | cut -d= -f2-)\" tsx watch src/server.ts",
+    "dev:decodo:nologin": "NAVER_SESSION_STATE_PATH= PROXIES=\"$(grep DECODO_PROXY .env | cut -d= -f2-)\" tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "loadtest": "tsx scripts/loadtest.ts",
+    "discover-products": "tsx scripts/discover-products.ts",
+    "scrape-debug": "tsx scripts/scrape-with-artifacts.ts",
+    "experiment:profile": "tsx scripts/experiment-persistent-vs-ephemeral.ts",
+    "experiment:journey": "tsx scripts/experiment-navigation-journey.ts",
+    "proxy-healthcheck": "tsx scripts/proxy-healthcheck.ts",
+    "gold-standard-eval": "tsx scripts/gold-standard-eval.ts",
+    "save-naver-session": "tsx scripts/save-naver-session.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "p-queue": "^6.6.2",
+    "patchright": "^1.61.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.9",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  }
+}
