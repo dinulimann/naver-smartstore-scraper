@@ -13,6 +13,11 @@ Two interchangeable backends are available — a self-hosted Playwright
 pipeline, or a managed scraping API — switched purely by an env var, no
 code changes needed. See [Backends](#two-backends) below.
 
+## Videos
+
+Code walkthrough, investigation analysis, and a live demo run:
+[**Submission Videos** (GitHub Release)](https://github.com/dinulimann/naver-smartstore-scraper/releases/tag/v1)
+
 ## Status
 
 Works end to end, including through Naver's CAPTCHA challenge. Getting
